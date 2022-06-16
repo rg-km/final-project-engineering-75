@@ -3,7 +3,7 @@ import { Button, ButtonGroup } from 'react-bootstrap';
 
 const FilterBulan = () => {
   return (
-    <div  className="d-grid">
+    <div className="d-grid">
       <ButtonGroup vertical>
         <Button variant="outline-dark">Januari</Button>
         <Button variant="outline-dark">Februari</Button>

@@ -8,7 +8,7 @@ const Navigation = () => {
             <Navbar.Brand href="/">JOURNAL LINK</Navbar.Brand>
             <Navbar.Toggle aria-controls="basic-navbar-nav" />
             <Navbar.Collapse id="basic-navbar-nav">
-                <Nav className="me-auto">
+                <Nav className="ms-auto">
                     <Nav.Link href="/">Beranda</Nav.Link>
                     <Nav.Link href="/notifikasi">Notifikasi</Nav.Link>
                     <Nav.Link href="/akun">Akun</Nav.Link>

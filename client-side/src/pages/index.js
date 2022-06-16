@@ -3,17 +3,22 @@ import Tanggal from '../components/beranda/tanggal'
 import FilterBulan from '../components/beranda/filterBulan'
 import RekapMingguan from '../components/beranda/rekapMingguan'
 import Alamat from '../components/beranda/alamat'
-import { Container, Row, Col, Card } from 'react-bootstrap'
+import { Container, Row, Col, Card, Stack, Alert } from 'react-bootstrap'
 
 const Beranda = () => {
 
   return (
     <Container>
-      <div style={{display: 'flex', justifyContent: 'space-between'}}>
-        Beranda
-        <Tanggal />
-      </div>
-      <Alamat />
+      <Stack gap={2}>
+        <div style={{display: 'flex', justifyContent: 'space-between'}}>
+          Beranda
+          <Tanggal />
+        </div>
+        <Alert key="secondary" variant="secondary">
+<Alamat />
+        </Alert>
+        
+      </Stack>
       <Card border="dark">
         <Card.Body>
           <Row>
