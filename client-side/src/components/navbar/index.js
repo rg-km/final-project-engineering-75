@@ -1,28 +1,22 @@
 import React from 'react'
-import { Nav, NavLink, Bars, NavMenu } from './NavbarElements'
+import { Navbar, Container, Nav } from 'react-bootstrap'
 
-const Navbar = () => {
+const Navigation = () => {
   return (
-    <>
-        <Nav>
-            <NavLink to="/">
-                <h1>JOURNAL LINK</h1>
-            </NavLink>
-            <Bars />
-            <NavMenu>
-                <NavLink to="/beranda" activeStyle>
-                    Beranda
-                </NavLink>
-                <NavLink to="/notifikasi" activeStyle>
-                    Notifikasi
-                </NavLink>
-                <NavLink to="/akun" activeStyle>
-                    Akun
-                </NavLink>
-            </NavMenu>
-        </Nav>
-    </>
+    <Navbar bg="dark" expand="lg" variant="dark">
+        <Container>
+            <Navbar.Brand href="/">JOURNAL LINK</Navbar.Brand>
+            <Navbar.Toggle aria-controls="basic-navbar-nav" />
+            <Navbar.Collapse id="basic-navbar-nav">
+                <Nav className="me-auto">
+                    <Nav.Link href="/">Beranda</Nav.Link>
+                    <Nav.Link href="/notifikasi">Notifikasi</Nav.Link>
+                    <Nav.Link href="/akun">Akun</Nav.Link>
+                </Nav>
+            </Navbar.Collapse>
+        </Container>
+    </Navbar>
   )
 }
 
-export default Navbar
+export default Navigation
