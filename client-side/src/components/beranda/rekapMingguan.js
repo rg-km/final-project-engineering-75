@@ -1,7 +1,7 @@
 import React from 'react'
 import { Badge, ListGroup, Button, Row, Col } from 'react-bootstrap';
 
-const Konten = () => {
+const RekapMingguan = () => {
   return (
     <ListGroup>
       <ListGroup.Item className="d-flex align-items-start">
@@ -64,4 +64,4 @@ const Konten = () => {
   )
 }
 
-export default Konten
+export default RekapMingguan

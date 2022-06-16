@@ -1,7 +1,7 @@
 import React from 'react'
 import { Button, ButtonGroup } from 'react-bootstrap';
 
-const Bulan = () => {
+const FilterBulan = () => {
   return (
     <div  className="d-grid">
       <ButtonGroup vertical>
@@ -22,4 +22,4 @@ const Bulan = () => {
   )
 }
 
-export default Bulan
+export default FilterBulan
