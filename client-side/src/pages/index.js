@@ -4,10 +4,10 @@ import FilterBulan from '../components/beranda/filterBulan'
 import RekapMingguan from '../components/beranda/rekapMingguan'
 import Alamat from '../components/beranda/alamat'
 import DetailMingguan from '../components/beranda/detailMingguan'
-import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import { Container, Row, Col, Card, Stack, Alert } from 'react-bootstrap'
 
 const Beranda = () => {
+  const [detailShow, setDetailShow] = React.useState(false);
 
   return (
     <Container>
@@ -24,8 +24,10 @@ const Beranda = () => {
         <Card.Body>
           <Row>
             <Col sm={3}><FilterBulan /></Col>
-            <Col sm={9}><RekapMingguan /></Col>
-            
+            <Col>
+              {detailShow === false && (<RekapMingguan detail={() => setDetailShow(true)} />)}
+              {detailShow === true && (<DetailMingguan />)}
+            </Col>
           </Row>
         </Card.Body>
       </Card>
