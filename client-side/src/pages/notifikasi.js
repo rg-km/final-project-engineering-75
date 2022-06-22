@@ -7,7 +7,10 @@ const Notifikasi = () => {
   return (
     <Container>
       <Stack gap={2}>
-        <div style={{ display: "flex", justifyContent: "space-between" }}>Notifikasi Tandai Semua Sudah Dibaca</div>
+        <div style={{ display: "flex", justifyContent: "space-between" }}>
+          <Col className="text-start"> Notifikasi</Col>
+          <Col className="text-end">Tandai Semua Sudah Dibaca</Col>
+        </div>
       </Stack>
       <Card border="dark">
         <Card.Body>
