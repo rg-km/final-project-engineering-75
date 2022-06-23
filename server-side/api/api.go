@@ -9,21 +9,21 @@ import (
 
 type API struct {
 	usersRepo       repository.UserRepository
+	journalRepo     repository.JournalRepository
 	mux             *http.ServeMux
 }
 
-func NewAPI(usersRepo repository.UserRepository) API {
+func NewAPI(usersRepo repository.UserRepository, journalRepo repository.JournalRepository) API {
 	mux := http.NewServeMux()
 	api := API{
-		usersRepo, mux,
+		usersRepo, journalRepo, mux,
 	}
 
 	mux.Handle("/api/user/login", api.POST(http.HandlerFunc(api.login)))
 	mux.Handle("/api/user/logout", api.POST(http.HandlerFunc(api.logout)))
 	mux.Handle("/api/user/register", api.POST(http.HandlerFunc(api.register)))
 
-	// // API with AuthMiddleware and AdminMiddleware
-	// mux.Handle("/api/admin/sales", api.GET(api.AuthMiddleWare(api.AdminMiddleware(http.HandlerFunc(api.getDashboard)))))
+	mux.Handle("/api/journal/list", api.GET(api.AuthMiddleWare(http.HandlerFunc(api.JournalList))))
 
 	return api
 }
