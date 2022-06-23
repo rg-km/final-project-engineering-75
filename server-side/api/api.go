@@ -24,6 +24,7 @@ func NewAPI(usersRepo repository.UserRepository, journalRepo repository.JournalR
 	mux.Handle("/api/user/register", api.POST(http.HandlerFunc(api.register)))
 
 	mux.Handle("/api/journal/list", api.GET(api.AuthMiddleWare(http.HandlerFunc(api.JournalList))))
+	mux.Handle("/api/journal/detail", api.POST(api.AuthMiddleWare(http.HandlerFunc(api.JournalDetailByID))))
 
 	return api
 }
