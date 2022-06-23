@@ -34,7 +34,12 @@ export default class Login extends Component {
         </div>
         <div className="d-grid">
           <button type="submit" className="btn btn-primary">
-            Sign In
+            Sign In as User
+          </button>
+        </div>
+        <div className="d-grid">
+          <button type="submit" className="btn btn-primary mt-3">
+            Sign In as Admin
           </button>
         </div>
         <p className="forgot-password text-right">
