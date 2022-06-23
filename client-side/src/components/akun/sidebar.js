@@ -7,7 +7,9 @@ const Sidebar =() => {
         <>
         <div className="d-grid">
       <ButtonGroup vertical>
-        <Button variant="outline-primary" href="\">Profil</Button>
+        <Button variant="outline-primary" href="../pages/index.js">Profil</Button>
+        <br>
+        </br>
         <Button variant="outline-primary" href="/">Ganti Kata Sandi</Button>
       </ButtonGroup>
     </div>

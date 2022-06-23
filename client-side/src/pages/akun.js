@@ -2,8 +2,8 @@ import React from 'react'
 import Keluar from '../components/akun/keluar'
 import Profil from '../components/akun/profil'
 import Sidebar from '../components/akun/sidebar'
-import { Container } from 'react-bootstrap'
-
+import { Container, Card, Row, Col } from 'react-bootstrap'
+import Gantikatasandi from '../components/akun/gantikatasandi'
 const Akun = () => {
 
   return (
@@ -13,8 +13,18 @@ const Akun = () => {
     <Keluar />
     <br>
     </br>
-      <Sidebar/>
-      <Profil/>
+
+    <Card >
+        <Card.Body>
+          <Row>
+            <Col sm={3}><Sidebar/></Col>
+            <Col sm={9}><Profil/></Col>
+            
+          </Row>
+        </Card.Body>
+      </Card>
+      <Gantikatasandi/>
+      
 
     </Container>
     </>

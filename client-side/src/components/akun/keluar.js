@@ -10,7 +10,7 @@ return (
     <Row>
         <Col>Akun</Col>
         <Col md="auto"></Col>
-        <Col xs lg="2">
+        <Col sm md xs lg="2">
         <button type="button" className="btn btn-danger">
           Keluar
         </button>

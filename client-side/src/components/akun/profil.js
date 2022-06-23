@@ -1,11 +1,16 @@
 import React from "react";
-import Form from 'react-bootstrap/Form'
-import Button from 'react-bootstrap/Button'
+import { Card } from "react-bootstrap";
+import Form from 'react-bootstrap/Form';
+import {Button, ListGroup } from 'react-bootstrap';
 
 const Profil =() => {
 
 return (
 <>
+<Card border="dark">
+
+  <ListGroup variant="flush">
+        <ListGroup.Item className="justify-content-between align-items-start">
 <Form>
   <Form.Group className="mb-3">
   <Form.Label>Nama Lengkap</Form.Label>
@@ -38,6 +43,9 @@ return (
     Submit
   </Button>
 </Form>
+</ListGroup.Item>
+      </ListGroup>
+</Card>
 </>
 )
 
