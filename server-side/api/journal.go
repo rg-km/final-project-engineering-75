@@ -3,6 +3,7 @@ package api
 import (
 	"encoding/json"
 	"net/http"
+	"strconv"
 )
 
 type JournalErrorResponse struct {
@@ -56,4 +57,29 @@ func (api *API) JournalList(w http.ResponseWriter, req *http.Request) {
 	}
 
 	encoder.Encode(response)
+}
+
+func (api *API) JournalDetailByID(w http.ResponseWriter, req *http.Request) {
+	api.AllowOrigin(w, req)
+	encoder := json.NewEncoder(w)
+
+	id, _ := strconv.ParseInt(req.URL.Query().Get("id"), 0, 64)
+	journal, err := api.journalRepo.GetJournalByID(id)
+	defer func() {
+		if err != nil {
+			w.WriteHeader(http.StatusBadRequest)
+			encoder.Encode(DashboardErrorResponse{Error: err.Error()})
+			return
+		}
+	}()
+	if err != nil {
+		return
+	}
+
+	journalResponse := JournalSuccessResponse{
+		Message: "success",
+		Data:     journal,
+	}
+		
+	encoder.Encode(journalResponse)
 }

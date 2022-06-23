@@ -44,3 +44,26 @@ func (j *JournalRepository) FetchJournals() ([]Journal, error) {
 
 	return journals, err
 }
+
+func (j *JournalRepository) GetJournalByID(id int64) (Journal, error) {
+	var sqlStatement string
+	var journal Journal
+
+	sqlStatement = `SELECT id, user_id, isi, status, date_submit, created_at, updated_at FROM journals WHERE id = ?`
+
+	err := j.db.QueryRow(sqlStatement, id).Scan(
+		&journal.ID,
+		&journal.UserID,
+		&journal.Isi,
+		&journal.Status,
+		&journal.DateSubmit,
+		&journal.Created_at,
+		&journal.Updated_at,
+	)
+
+	if err != nil {
+		return journal, errors.New("No Available Journal")
+	}
+
+	return journal, nil
+}
