@@ -3,6 +3,7 @@ package repository
 import (
 	"database/sql"
 	"errors"
+	"time"
 )
 
 type JournalRepository struct {
@@ -66,4 +67,18 @@ func (j *JournalRepository) GetJournalByID(id int64) (Journal, error) {
 	}
 
 	return journal, nil
+}
+
+func (j *JournalRepository) InsertJournal(UserID int64, Isi string, Status string, DateSubmit string) error {
+	var sqlStmt string
+
+	sqlStmt = `INSERT INTO journals (user_id, isi, status, date_submit, created_at, updated_at) VALUES (?, ?, ?, ?, ?, ?);`
+
+	_, err := j.db.Exec(sqlStmt, UserID, Isi, Status, time.Now(), time.Now(), time.Now())
+
+	if err != nil {
+		return err
+	}
+
+	return nil
 }

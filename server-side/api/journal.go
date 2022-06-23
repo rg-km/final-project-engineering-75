@@ -83,3 +83,29 @@ func (api *API) JournalDetailByID(w http.ResponseWriter, req *http.Request) {
 		
 	encoder.Encode(journalResponse)
 }
+
+func (api *API) JournalCreate(w http.ResponseWriter, req *http.Request) {
+    var journal Journal
+	encoder := json.NewEncoder(w)
+
+	user_id, _ := strconv.ParseInt(req.URL.Query().Get("user_id"), 0, 64)
+    err := json.NewDecoder(req.Body).Decode(&journal)
+    if err != nil {
+        w.WriteHeader(http.StatusBadRequest)
+		encoder.Encode(DashboardErrorResponse{Error: err.Error()})
+        return
+    }
+
+    err = api.journalRepo.InsertJournal(user_id, journal.Isi, journal.Status, journal.DateSubmit)
+    if err != nil {
+        w.WriteHeader(http.StatusInternalServerError)
+        return
+    }
+
+	journalResponse := JournalSuccessResponse{
+		Message: "create journal success",
+		Data:     journal,
+	}
+		
+	encoder.Encode(journalResponse)
+}
