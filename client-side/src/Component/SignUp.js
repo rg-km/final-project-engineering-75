@@ -5,18 +5,6 @@ export default class SignUp extends Component {
       <form>
         <h3>Sign Up</h3>
         <div className="mb-3">
-          <label>First name</label>
-          <input
-            type="text"
-            className="form-control"
-            placeholder="First name"
-          />
-        </div>
-        <div className="mb-3">
-          <label>Last name</label>
-          <input type="text" className="form-control" placeholder="Last name" />
-        </div>
-        <div className="mb-3">
           <label>Email address</label>
           <input
             type="email"
@@ -30,6 +18,14 @@ export default class SignUp extends Component {
             type="password"
             className="form-control"
             placeholder="Enter password"
+          />
+        </div>
+        <div className="mb-3">
+          <label>Confirm Password</label>
+          <input
+            type="password"
+            className="form-control"
+            placeholder="Confirm password"
           />
         </div>
         <div className="d-grid">
