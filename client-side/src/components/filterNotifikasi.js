@@ -2,14 +2,20 @@ import React from "react";
 import { Button, ButtonGroup } from "react-bootstrap";
 
 const FilterNotifikasi = () => {
+  const filterNotif = [
+    { id: 1, nama: "Semua Notifikasi", variant: "dark" },
+    { id: 2, nama: "Belum Diisi", variant: "secondary"},
+    { id: 3, nama: "Proses Review", variant: "warning" },
+    { id: 4, nama: "Perlu Revisi", variant: "danger" },
+    { id: 5, nama: "Selesai", variant: "success" }
+  ]
+
   return (
     <div className="d-grid">
       <ButtonGroup vertical>
-        <Button variant="light">Semua Notifikasi</Button>
-        <Button variant="secondary">Belum Diisi</Button>
-        <Button variant="warning">Proses Riview</Button>
-        <Button variant="danger">Perlu Revisi</Button>
-        <Button variant="success">Selesai</Button>
+        {filterNotif.map((notif) => (
+          <Button variant={notif.variant}>{notif.nama}</Button> 
+        ))}
       </ButtonGroup>
     </div>
   );

@@ -1,23 +1,22 @@
 import React from "react";
 import { ListGroup, Card } from "react-bootstrap";
-import FilterNotifikasi from "./filterNotifikasi";
 
 const DetailNotifikasi = () => {
+  const dataNotif = [
+    {id: 1, nama: "notifikasi 1", tanggal: "1 Juni 2022", status: "belum diisi", variant: "secondary"},
+    {id: 2, nama: "notifikasi 2", tanggal: "16 Mei 2022", status: "pending", variant: "warning"},
+    {id: 3, nama: "notifikasi 3", tanggal: "23 Mei 2022", status: "perlu revisi", variant: "danger"},
+    {id: 4, nama: "notifikasi 4", tanggal: "9 Mei 2022", status: "selesai", variant: "success"}
+  ]
+
   return (
     <Card border="dark">
       <ListGroup variant="flush">
-        <ListGroup.Item className="justify-content-between align-items-start" variant="secondary">
-          <div className="text-start fw-bold">Jangan Lupa Isi Jurnal Tanggal 1 Juni 2022</div>
-        </ListGroup.Item>
-        <ListGroup.Item className="justify-content-between align-items-start" variant="warning">
-          <div className="text-start fw-bold">Jurnal Tanggal 16 Mei 2022 Sedang Dalam Proses Review</div>
-        </ListGroup.Item>
-        <ListGroup.Item className="justify-content-between align-items-start" variant="danger">
-          <div className="text-start fw-bold">Perbaiki Jurnal Tanggal 23 Mei 2022</div>
-        </ListGroup.Item>
-        <ListGroup.Item className="justify-content-between align-items-start" variant="success">
-          <div className="text-start fw-bold">Jurnal Tanggal 9 Mei 2022 Telah Diterima</div>
-        </ListGroup.Item>
+        {dataNotif.map((notif) => (
+          <ListGroup.Item className="justify-content-between align-items-start" variant={notif.variant}>
+            <div className="text-start fw-bold">Jurnal tanggal {notif.tanggal} {notif.status}</div>
+          </ListGroup.Item>
+        ))}
       </ListGroup>
     </Card>
   );

@@ -14,7 +14,9 @@ function App() {
       <Stack gap={2}>
         <Navbar />
         <Routes>
+          {/* <Route path="/" exact element={<Beranda />} /> */}
           <Route path="/notifikasi" exact element={<Notifikasi />} />
+          {/* <Route path="/akun" exact element={<Akun />} /> */}
         </Routes>
       </Stack>
     </Router>

@@ -1,7 +1,7 @@
 import React from "react";
 import FilterNotifikasi from "../components/filterNotifikasi";
 import DetailNotifikasi from "../components/detailNotifikasi";
-import { Container, Row, Col, Card, Stack, Alert } from "react-bootstrap";
+import { Container, Row, Col, Card, Stack } from "react-bootstrap";
 
 const Notifikasi = () => {
   return (
@@ -11,19 +11,19 @@ const Notifikasi = () => {
           <Col className="text-start"> Notifikasi</Col>
           <Col className="text-end">Tandai Semua Sudah Dibaca</Col>
         </div>
+        <Card border="dark">
+          <Card.Body>
+            <Row>
+              <Col sm={3}>
+                <FilterNotifikasi />
+              </Col>
+              <Col>
+                <DetailNotifikasi />
+              </Col>
+            </Row>
+          </Card.Body>
+        </Card>
       </Stack>
-      <Card border="dark">
-        <Card.Body>
-          <Row>
-            <Col sm={3}>
-              <FilterNotifikasi />
-            </Col>
-            <Col>
-              <DetailNotifikasi />
-            </Col>
-          </Row>
-        </Card.Body>
-      </Card>
     </Container>
   );
 };
