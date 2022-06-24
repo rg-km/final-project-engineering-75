@@ -1,15 +1,21 @@
 import React from 'react'
 
-const Tanggal = () => {
-  const date = new Date();
-  const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
-  const display = date.toLocaleDateString("id-ID", options);
-  
-  return (
-    <div>
-        {display}
-    </div>
-  )
+class Tanggal extends React.Component {
+  constructor(props) {
+    super(props);
+    this.state = {
+      date: new Date(),
+    };
+  }
+
+  render() {
+    const options = { weekday: 'long', year: 'numeric', month: 'long', day: 'numeric' };
+    return (
+      <div>
+        {this.state.date.toLocaleTimeString("id-ID", options)}
+      </div>
+    );
+  }
 }
 
 export default Tanggal
