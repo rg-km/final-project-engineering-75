@@ -1,6 +1,6 @@
 import React from "react";
-import FilterNotifikasi from "../components/filterNotifikasi";
-import DetailNotifikasi from "../components/detailNotifikasi";
+import FilterNotifikasi from "../components/notifikasi/filterNotifikasi";
+import DetailNotifikasi from "../components/notifikasi/detailNotifikasi";
 import { Container, Row, Col, Card, Stack } from "react-bootstrap";
 
 const Notifikasi = () => {
