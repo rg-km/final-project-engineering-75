@@ -9,7 +9,11 @@ const Navigation = () => {
         <Navbar.Toggle aria-controls="basic-navbar-nav" />
         <Navbar.Collapse id="basic-navbar-nav">
           <Nav className="ms-auto">
-            <Nav.Link href="/notifikasi">Notifikasi</Nav.Link>
+            <Nav.Link href="/" className="d-flex align-items-center">Beranda</Nav.Link>
+            <Nav.Link href="/notifikasi" className="d-flex align-items-center">Notifikasi</Nav.Link>
+            <Nav.Link href="/akun">
+              <Button variant="danger" size="sm">Keluar</Button>
+            </Nav.Link>
           </Nav>
         </Navbar.Collapse>
       </Container>
