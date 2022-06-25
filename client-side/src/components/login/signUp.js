@@ -4,13 +4,13 @@ export default class SignUp extends Component {
   render() {
     return (
       <form>
-        <h3>Sign Up</h3>
+        <h3>Daftar</h3>
         <div className="mb-3">
-          <label>Email address</label>
+          <label>Email</label>
           <input
             type="email"
             className="form-control"
-            placeholder="Enter email"
+            placeholder="Masukkan email"
           />
         </div>
         <div className="mb-3">
@@ -18,24 +18,24 @@ export default class SignUp extends Component {
           <input
             type="password"
             className="form-control"
-            placeholder="Enter password"
+            placeholder="Masukkan password"
           />
         </div>
         <div className="mb-3">
-          <label>Confirm Password</label>
+          <label>Konfirmasi Password</label>
           <input
             type="password"
             className="form-control"
-            placeholder="Confirm password"
+            placeholder="Konfirmasi password"
           />
         </div>
         <div className="d-grid">
           <button type="submit" className="btn btn-primary">
-            Sign Up
+            Daftar
           </button>
         </div>
         <p className="forgot-password text-right">
-          Sudah punya akun? <a href="/sign-in">Sign In?</a>
+          Sudah punya akun? <a href="/">Masuk</a>
         </p>
       </form>
     )
