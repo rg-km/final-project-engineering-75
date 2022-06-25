@@ -1,9 +1,17 @@
-import React from 'react'
-import '../node_modules/bootstrap/dist/css/bootstrap.min.css'
-import './App.css'
-import { BrowserRouter as Router, Routes, Route, Link } from 'react-router-dom'
-import Login from './Component/Login'
-import SignUp from './Component/SignUp'
+import './App.css';
+import './index.css';
+import React from 'react';
+import Navbar from './components/navbar';
+import Beranda from './pages/index';
+import Notifikasi from './pages/notifikasi';
+import Akun from './pages/akun';
+import Login from './components/login/login';
+import SignUp from './components/login/signUp';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import 'bootstrap/dist/css/bootstrap.min.css';
+import ProtectedRoutes from './ProtectedRoutes';
+// import { Stack } from 'react-bootstrap';
+
 function App() {
   return (
     <Router>
@@ -12,9 +20,14 @@ function App() {
         <div className="auth-wrapper">
           <div className="auth-inner">
             <Routes>
-              <Route exact path="/" element={<Login />} />
-              <Route path="/sign-in" element={<Login />} />
-              <Route path="/sign-up" element={<SignUp />} />
+              <Route path="/" exact element={<Login />} />
+              <Route path="/sign-up" exact element={<SignUp />} />
+              <Route element={ProtectedRoutes}>
+                {/* <Navbar /> */}
+                <Route path="/beranda" exact element={<Beranda />} />
+                <Route path="/notifikasi" exact element={<Notifikasi />} />
+                <Route path="/akun" exact element={<Akun />} />
+              </Route>
             </Routes>
           </div>
         </div>
@@ -22,4 +35,5 @@ function App() {
     </Router>
   )
 }
-export default App
+
+export default App;
