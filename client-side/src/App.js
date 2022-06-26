@@ -16,21 +16,17 @@ function App() {
   return (
     <Router>
       <div className="App">
-      <h2>JOURNAL LINK</h2>
-        <div className="auth-wrapper">
-          <div className="auth-inner">
-            <Routes>
-              <Route path="/" exact element={<Login />} />
-              <Route path="/sign-up" exact element={<SignUp />} />
-              <Route element={ProtectedRoutes}>
-                {/* <Navbar /> */}
-                <Route path="/beranda" exact element={<Beranda />} />
-                <Route path="/notifikasi" exact element={<Notifikasi />} />
-                <Route path="/akun" exact element={<Akun />} />
-              </Route>
-            </Routes>
-          </div>
-        </div>
+        <h2>JOURNAL LINK</h2>
+        <Routes>
+          <Route path="/" exact element={<Login />} />
+          <Route path="/sign-up" exact element={<SignUp />} />
+          {/* <Route element={ProtectedRoutes}> */}
+            {/* <Navbar /> */}
+            <Route path="/beranda" exact element={<Beranda />} />
+            <Route path="/notifikasi" exact element={<Notifikasi />} />
+            <Route path="/akun" exact element={<Akun />} />
+          {/* </Route> */}
+        </Routes>
       </div>
     </Router>
   )
