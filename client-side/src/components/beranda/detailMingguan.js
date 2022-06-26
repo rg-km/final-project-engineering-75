@@ -1,7 +1,6 @@
 import React from 'react'
 import InputJurnal from './inputJurnal';
 import { Badge, ListGroup, Card, Button, Row, Col } from 'react-bootstrap';
-import Axios from 'axios';
 
 const DetailMingguan = () => {
   const [modalShow, setModalShow] = React.useState(false);
