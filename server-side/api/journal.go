@@ -4,6 +4,7 @@ import (
 	"encoding/json"
 	"net/http"
 	"strconv"
+	"errors"
 )
 
 type JournalErrorResponse struct {
@@ -95,6 +96,12 @@ func (api *API) JournalCreate(w http.ResponseWriter, req *http.Request) {
 		encoder.Encode(DashboardErrorResponse{Error: err.Error()})
         return
     }
+
+	if journal.Status== "" {
+		w.WriteHeader(http.StatusBadRequest)
+		encoder.Encode(DashboardErrorResponse{Error: errors.New("status is required").Error()})
+        return
+	}
 
     err = api.journalRepo.InsertJournal(user_id, journal.Isi, journal.Status, journal.DateSubmit)
     if err != nil {
