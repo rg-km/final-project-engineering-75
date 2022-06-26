@@ -10,13 +10,14 @@ import (
 type API struct {
 	usersRepo       repository.UserRepository
 	journalRepo     repository.JournalRepository
+	notificationRepo repository.NotificationRepository
 	mux             *http.ServeMux
 }
 
-func NewAPI(usersRepo repository.UserRepository, journalRepo repository.JournalRepository) API {
+func NewAPI(usersRepo repository.UserRepository, journalRepo repository.JournalRepository, notificationRepo repository.NotificationRepository) API {
 	mux := http.NewServeMux()
 	api := API{
-		usersRepo, journalRepo, mux,
+		usersRepo, journalRepo, notificationRepo, mux,
 	}
 
 	mux.Handle("/api/user/login", api.POST(http.HandlerFunc(api.login)))
