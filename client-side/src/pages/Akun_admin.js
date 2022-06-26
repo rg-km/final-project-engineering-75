@@ -4,7 +4,7 @@ import Profil from '../components/akun/profil'
 import Sidebar from '../components/akun/sidebar'
 import { Container, Card, Row, Col } from 'react-bootstrap'
 import Gantikatasandi from '../components/akun/gantikatasandi'
-const Akun = () => {
+const Akun_admin = () => {
 
   return (
     <>
@@ -32,4 +32,4 @@ const Akun = () => {
   )
 }
 
-export default Akun
+export default Akun_admin
