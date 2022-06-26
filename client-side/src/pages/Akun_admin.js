@@ -1,5 +1,4 @@
 import React from 'react'
-import Keluar from '../components/akun/keluar'
 import Profil from '../components/akun/profil'
 import Sidebar from '../components/akun/sidebar'
 import { Container, Card, Row, Col } from 'react-bootstrap'
@@ -10,7 +9,6 @@ const Akun_admin = () => {
     <>
     <Container>
       
-    <Keluar />
     <br>
     </br>
 
