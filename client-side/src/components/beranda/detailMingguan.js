@@ -19,7 +19,7 @@ const DetailMingguan = () => {
         <Card.Header className="justify-content-between align-items-start">
           <Row>
             <Col className="text-start" md="auto">
-              <Button variant="outline-primary" size="sm" href="/">Kembali</Button>
+              <Button variant="outline-primary" size="sm" href="/beranda">Kembali</Button>
             </Col>
             <Col className="text-start align-items-center d-flex">
               <div className="fw-bold">Minggu ke-4</div>
