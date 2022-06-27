@@ -1,6 +1,7 @@
 import React from "react";
 import FilterNotifikasi from "../components/notifikasi/filterNotifikasi";
 import DetailNotifikasi from "../components/notifikasi/detailNotifikasi";
+import Navbar from '../components/navbar';
 import { Container, Row, Col, Card, Stack } from "react-bootstrap";
 import { useNavigate } from 'react-router-dom'
 
@@ -14,26 +15,28 @@ const Notifikasi = () => {
   }, [])
 
   return (
-    <Container>
-      <Stack gap={2}>
-        <div style={{ display: "flex", justifyContent: "space-between" }}>
-          <Col className="text-start"> Notifikasi</Col>
-          <Col className="text-end">Tandai Semua Sudah Dibaca</Col>
-        </div>
-        <Card border="dark">
-          <Card.Body>
-            <Row>
-              <Col sm={3}>
-                <FilterNotifikasi />
-              </Col>
-              <Col>
-                <DetailNotifikasi />
-              </Col>
-            </Row>
-          </Card.Body>
-        </Card>
-      </Stack>
-    </Container>
+    <Stack gap={2}>
+      <Navbar />
+      <Container>
+        <Stack gap={2}>
+          <div style={{ display: "flex", justifyContent: "space-between" }}>
+            <Col className="text-start"> Notifikasi</Col>
+          </div>
+          <Card border="dark">
+            <Card.Body>
+              <Row>
+                <Col sm={3}>
+                  <FilterNotifikasi />
+                </Col>
+                <Col>
+                  <DetailNotifikasi />
+                </Col>
+              </Row>
+            </Card.Body>
+          </Card>
+        </Stack>
+      </Container>
+    </Stack>
   );
 };
 

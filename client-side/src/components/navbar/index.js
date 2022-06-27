@@ -1,7 +1,15 @@
 import React from 'react'
 import { Navbar, Container, Nav, Button } from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom'
 
 const Navigation = () => {
+  const navigate = useNavigate();
+
+  function logout() {
+    localStorage.removeItem('token');
+    navigate('/');
+  }
+
   return (
     <Navbar bg="dark" expand="lg" variant="dark">
       <Container>
@@ -11,9 +19,7 @@ const Navigation = () => {
           <Nav className="ms-auto">
             <Nav.Link href="/beranda" className="d-flex align-items-center">Beranda</Nav.Link>
             <Nav.Link href="/notifikasi" className="d-flex align-items-center">Notifikasi</Nav.Link>
-            <Nav.Link href="/akun">
-              <Button variant="danger" size="sm" onClick={() => {localStorage.removeItem('token')}}>Keluar</Button>
-            </Nav.Link>
+            <Button variant="danger" size="sm" onClick={logout}>Keluar</Button>
           </Nav>
         </Navbar.Collapse>
       </Container>

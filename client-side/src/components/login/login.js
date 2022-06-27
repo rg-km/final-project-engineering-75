@@ -7,6 +7,7 @@ const Login = () => {
   const navigate = useNavigate();
   const [email, setEmail] = React.useState('');
   const [password, setPassword] = React.useState('');
+  const [role, setRole] = React.useState('');
 
   const handleEmail = (e) => {
     setEmail(e.target.value);
@@ -16,11 +17,16 @@ const Login = () => {
     setPassword(e.target.value);
   }
 
+  const handleRole = (e) => {
+    setRole(e.target.value);
+  }
+
   const handleApi = (e) => {
     console.log({ email, password });
-    axios.post('https://reqres.in/api/login', {
+    axios.post('http://localhost:8080/api/user/login', {
       email: email,
-      password: password
+      password: password,
+      role: role
     })
       .then(res => {
         console.log(res.data);
@@ -51,8 +57,8 @@ const Login = () => {
                 <Form.Control value={password} type="password" placeholder="Masukkan password" onChange={handlePassword} />
               </Form.Group>
               <div key="inline-radio" className="mb-3">
-                <Form.Check inline label="User" name="group1" type="radio" id="inline-radio-1"/>
-                <Form.Check inline label="Admin" name="group1" type="radio" id="inline-radio-2"/>
+                <Form.Check inline label="User" value={role} name="group1" type="radio" id="inline-radio-1" onChange={handleRole} />
+                <Form.Check inline label="Admin" value={role} name="group1" type="radio" id="inline-radio-2" onChange={handleRole} />
               </div>
               <div className="d-grid">
                 <Button variant="primary" onClick={handleApi}>

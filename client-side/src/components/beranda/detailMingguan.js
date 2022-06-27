@@ -1,10 +1,10 @@
 import React from 'react'
 import InputJurnal from './inputJurnal';
 import { Badge, ListGroup, Card, Button, Row, Col } from 'react-bootstrap';
-import Axios from 'axios';
 
 const DetailMingguan = () => {
   const [modalShow, setModalShow] = React.useState(false);
+
   const dataDetail = [
     {id: 1, tanggal: "Senin, 30 Mei 2022", isi: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim ut sem viverra aliquet eget sit amet. Lorem ipsum dolor sit amet consectetur adipiscing elit ut. Congue nisi vitae suscipit tellus mauris a diam maecenas. Ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum."},
     {id: 2, tanggal: "Selasa, 31 Mei 2022", isi: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Enim ut sem viverra aliquet eget sit amet. Lorem ipsum dolor sit amet consectetur adipiscing elit ut. Congue nisi vitae suscipit tellus mauris a diam maecenas. Ut tristique et egestas quis ipsum suspendisse ultrices gravida dictum."},
