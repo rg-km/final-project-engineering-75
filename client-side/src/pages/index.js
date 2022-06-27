@@ -4,9 +4,17 @@ import FilterBulan from '../components/beranda/filterBulan'
 import RekapMingguan from '../components/beranda/rekapMingguan'
 import DetailMingguan from '../components/beranda/detailMingguan'
 import { Container, Row, Col, Card, Stack } from 'react-bootstrap'
+import { useNavigate } from 'react-router-dom'
 
 const Beranda = () => {
+  const navigate = useNavigate();
   const [detailShow, setDetailShow] = React.useState(false);
+
+  React.useEffect(() => {
+    if (!localStorage.getItem('token')) {
+      navigate('/')
+    }
+  }, [])
 
   return (
     <Container>

@@ -12,7 +12,7 @@ const Navigation = () => {
             <Nav.Link href="/beranda" className="d-flex align-items-center">Beranda</Nav.Link>
             <Nav.Link href="/notifikasi" className="d-flex align-items-center">Notifikasi</Nav.Link>
             <Nav.Link href="/akun">
-              <Button variant="danger" size="sm">Keluar</Button>
+              <Button variant="danger" size="sm" onClick={() => {localStorage.removeItem('token')}}>Keluar</Button>
             </Nav.Link>
           </Nav>
         </Navbar.Collapse>

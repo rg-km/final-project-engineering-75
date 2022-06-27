@@ -2,8 +2,17 @@ import React from "react";
 import FilterNotifikasi from "../components/notifikasi/filterNotifikasi";
 import DetailNotifikasi from "../components/notifikasi/detailNotifikasi";
 import { Container, Row, Col, Card, Stack } from "react-bootstrap";
+import { useNavigate } from 'react-router-dom'
 
 const Notifikasi = () => {
+  const navigate = useNavigate();
+
+  React.useEffect(() => {
+    if (!localStorage.getItem('token')) {
+      navigate('/')
+    }
+  }, [])
+
   return (
     <Container>
       <Stack gap={2}>
