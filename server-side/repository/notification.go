@@ -27,7 +27,7 @@ func (n *NotificationRepository) GetNotificationByUserID(id int64) (Notification
 	)
 
 	if err != nil {
-		return notification, errors.New("No Available Journal")
+		return notification, errors.New("No Available Notification")
 	}
 
 	return notification, nil
@@ -46,28 +46,3 @@ func (n *NotificationRepository) SendNotification(id int64) error {
 
 	return nil
 }
-
-// func (n *NotificationRepository) CreateNotification(notification Notification) (Notification, error) {
-// 	var sqlStmt string
-
-// 	sqlStmt = `INSERT INTO notifications (user_id, message) VALUES (?, ?);`
-
-// 	stmt, err := n.db.Prepare(sqlStmt)
-// 	if err != nil {
-// 		return notification, err
-// 	}
-
-// 	res, err := stmt.Exec(notification.UserID, notification.Message)
-// 	if err != nil {
-// 		return notification, err
-// 	}
-
-// 	id, err := res.LastInsertId()
-// 	if err != nil {
-// 		return notification, err
-// 	}
-
-// 	notification.ID = id
-
-// 	return notification, nil
-// }
