@@ -36,10 +36,11 @@ CREATE TABLE IF NOT EXISTS journals (
 	FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
-CREATE TABEL IF NOT EXISTS notifications (
+CREATE TABLE IF NOT EXISTS notifications (
 	id integer not null primary key AUTOINCREMENT,
 	user_id integer default null,
 	message varchar(255) not null,
+	FOREIGN KEY (user_id) REFERENCES users(id) ON DELETE CASCADE ON UPDATE CASCADE
 );
 
 INSERT INTO users (
@@ -52,8 +53,8 @@ INSERT INTO users (
 )
 VALUES (
 	'yap',
-	'yap@gmail.com',
-	'lntanasm',
+	'yap@mail.co',
+	'1234',
 	'mentor',
 	'2022-06-13 22:04:59',
 	'2022-06-13 22:04:59'
