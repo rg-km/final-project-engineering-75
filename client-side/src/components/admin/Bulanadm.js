@@ -1,7 +1,7 @@
 import React from 'react'
 import { ButtonGroup, ToggleButton } from 'react-bootstrap';
 
-const Bulan = () => {
+const Bulanadm = () => {
   const dataBulan = [
     {id: 1, name: "Januari", value: "1"},
     {id: 2, name: "Februari", value: "2"},
@@ -47,4 +47,4 @@ const Bulan = () => {
   )
 }
 
-export default Bulan
+export default Bulanadm
