@@ -83,12 +83,25 @@ func (j *JournalRepository) InsertJournal(UserID int64, Isi string, Status strin
 	return nil
 }
 
-func (j *JournalRepository) UpdateJournal(Isi string, id int64) error {
+func (j *JournalRepository) UpdateJournal(Isi string, id int64, user_id int64) error {
 	var sqlStmt string
 
-	sqlStmt = `UPDATE journals SET isi = ? WHERE id = ?;`
+	sqlStmt = `UPDATE journals SET isi = ? WHERE id = ? AND user_id =?;`
 
-	_, err := j.db.Exec(sqlStmt, Isi, id)
+	_, err := j.db.Exec(sqlStmt, Isi, id, user_id)
+
+	if err != nil {
+		return err
+	}
+
+	return nil
+}
+func (j *JournalRepository) UpdateStatus(Status string, id int64) error {
+	var sqlStmt string
+
+	sqlStmt = `UPDATE journals SET status = ? WHERE id = ?;`
+
+	_, err := j.db.Exec(sqlStmt, Status, id)
 
 	if err != nil {
 		return err
