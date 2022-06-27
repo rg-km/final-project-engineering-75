@@ -86,7 +86,7 @@ func (u *UserRepository) Login(email string, password string) (*string, error) {
 	)
 
 	if err != nil {
-		return nil, errors.New("Invalid username or password")
+		return nil, errors.New("Invalid Email or Password")
 	}
 
 	return &user.Username, nil
