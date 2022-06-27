@@ -30,6 +30,7 @@ func NewAPI(usersRepo repository.UserRepository, journalRepo repository.JournalR
 	mux.Handle("/api/admin/journal/detail", api.POST(api.AuthMiddleWare(api.AdminMiddleware(http.HandlerFunc(api.AdminGetDetailJournal)))))
 	mux.Handle("/api/admin/journal/update", api.POST(api.AuthMiddleWare(api.AdminMiddleware(http.HandlerFunc(api.JournalUpdateStatus)))))
 	mux.Handle("/api/account/profile", api.GET(api.AuthMiddleWare(http.HandlerFunc(api.UserDetailbyID))))
+	mux.Handle("/api/notification", api.GET(api.AuthMiddleWare(http.HandlerFunc(api.GetNotification))))
 	return api
 }
 
